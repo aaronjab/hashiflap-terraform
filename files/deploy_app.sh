@@ -41,4 +41,4 @@ cat << EOM > /var/www/html/index.html
 </html> 
 EOM
 
-echo "Script complete."
+echo "Script complete..."
