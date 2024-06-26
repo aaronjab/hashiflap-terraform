@@ -18,6 +18,8 @@ resource "aws_vpc" "hashiflap" {
   tags = {
     name        = "${var.prefix}-vpc-${var.region}"
     environment = "hashiflap"
+    owner       = "aaronjab"
+    ttl         = "ephemeral"
   }
 }
 
@@ -27,6 +29,9 @@ resource "aws_subnet" "hashiflap" {
 
   tags = {
     name = "${var.prefix}-subnet"
+    environment = "hashiflap"
+    owner       = "aaronjab"
+    ttl         = "ephemeral"
   }
 }
 
@@ -66,6 +71,9 @@ resource "aws_security_group" "hashiflap" {
 
   tags = {
     Name = "${var.prefix}-security-group"
+    environment = "hashiflap"
+    owner       = "aaronjab"
+    ttl         = "ephemeral"
   }
 }
 
@@ -74,6 +82,9 @@ resource "aws_internet_gateway" "hashiflap" {
 
   tags = {
     Name = "${var.prefix}-internet-gateway"
+    environment = "hashiflap"
+    owner       = "aaronjab"
+    ttl         = "ephemeral"
   }
 }
 
@@ -127,6 +138,9 @@ resource "aws_instance" "hashiflap" {
 
   tags = {
     Name = "${var.prefix}-hashiflap-instance"
+    environment = "hashiflap"
+    owner       = "aaronjab"
+    ttl         = "ephemeral"
   }
 }
 
