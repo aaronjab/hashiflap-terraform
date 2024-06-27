@@ -186,7 +186,7 @@ resource "null_resource" "configure-flap-app" {
       "chmod +x *.sh",
       "PLACEHOLDER=${var.placeholder} WIDTH=${var.width} HEIGHT=${var.height} PREFIX=${var.prefix} ./deploy_app.sh",
       "sudo apt -y install cowsay",
-      "cowsay Moooooooooo!",
+      "cowsay Mooooooooo!",
       "rm -rf /var/www/html/*",
       "git clone https://github.com/aaronjab/hashiflap.git /var/www/html"
     ]
