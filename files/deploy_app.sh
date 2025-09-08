@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script to deploy a very simple game.
-rm -rf /var/www/html/*
+rm -rf /var/www/html
 cat << EOM > /var/www/html/index.html
 <!DOCTYPE html>
 <html>
