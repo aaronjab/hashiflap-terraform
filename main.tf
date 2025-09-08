@@ -182,12 +182,12 @@ resource "null_resource" "configure-flap-app" {
       "sudo apt -y update",
       "sudo apt -y install apache2 git",
       "sudo systemctl start apache2",
-      "sudo chown -R ubuntu:ubuntu /var/www/html",
+      "sudo chown -R ubuntu:ubuntu /var/www/html",      
       "chmod +x *.sh",
       "PLACEHOLDER=${var.placeholder} WIDTH=${var.width} HEIGHT=${var.height} PREFIX=${var.prefix} ./deploy_app.sh",
       "sudo apt -y install cowsay",
       "cowsay Mooooooooo!",
-      "rm -rf /var/www/html/*",
+      "rm -rf /var/www/*",
       "git clone https://github.com/aaronjab/hashiflap.git /var/www/html"
     ]
 
