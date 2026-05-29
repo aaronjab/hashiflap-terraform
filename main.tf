@@ -102,21 +102,21 @@ resource "aws_route_table_association" "hashiflap" {
   route_table_id = aws_route_table.hashiflap.id
 }
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
+# data "aws_ami" "ubuntu" {
+#   most_recent = true
 
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
-  }
+#   filter {
+#     name   = "name"
+#     values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+#   }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
+#   filter {
+#     name   = "virtualization-type"
+#     values = ["hvm"]
+#   }
 
-  owners = ["099720109477"] # Canonical
-}
+#   owners = ["099720109477"] # Canonical
+# }
 
 resource "aws_eip" "hashiflap" {
   instance = aws_instance.hashiflap.id
@@ -129,7 +129,8 @@ resource "aws_eip_association" "hashiflap" {
 }
 
 resource "aws_instance" "hashiflap" {
-  ami                         = data.aws_ami.ubuntu.id
+  # ami                         = data.aws_ami.ubuntu.id
+  ami                         = "ami-0c2b8ca1dad447f8" # Ubuntu 22.04 LTS in us-east-1
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.hashiflap.key_name
   associate_public_ip_address = true
