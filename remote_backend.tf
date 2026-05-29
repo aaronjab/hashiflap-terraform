@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "ensonoawsdemo"
+    organization = "projectjab"
     workspaces {
       name = "hashiflap-terraform"
     }
