@@ -120,7 +120,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_eip" "hashiflap" {
   instance = aws_instance.hashiflap.id
-  vpc      = true
+  # vpc      = true
 }
 
 resource "aws_eip_association" "hashiflap" {
